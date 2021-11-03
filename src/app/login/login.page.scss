@@ -1,0 +1,36 @@
+:host {
+  
+
+    ion-item {
+        border-radius: 12px ;
+        margin-bottom:20px;
+      }
+}
+
+.paz {
+    position: relative;
+    z-index: 10;
+}
+
+.error-message
+{
+  color: red;
+}
+
+.validation-errors {
+  color: red;
+}
+
+
+a {
+  background-color: transparent;
+  color: red;
+  text-decoration: underline;
+ }
+
+a:hover {
+background-color: transparent;
+color: red;
+text-decoration: underline;
+}
+

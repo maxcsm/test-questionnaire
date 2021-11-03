@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="color: var(--ion-color-primary);">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Questionnaires</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list *ngFor="let item of posts">
+    <ion-card color="secondary" (click)="view($event, item)">
+      <ion-card-header>
+        <ion-card-title style="text-align: center;color: white;">{{item.title}}</ion-card-title>
+        <ion-card-subtitle style="color: white; text-align: center;">{{ item.subtitle }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content maxlength="10">
+        <p style="color: rgba(241, 241, 241, 0.753); text-align: center;">{{item.content}}</p>
+      </ion-card-content>
+
+
+    </ion-card>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content>

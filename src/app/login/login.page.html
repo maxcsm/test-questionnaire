@@ -1,0 +1,94 @@
+<ion-content >
+
+
+  <ion-grid>
+  <ion-row color="primary" justify-content-center>
+
+    <ion-col size-md="3" size-lg="3" size-xs="12">
+    </ion-col>
+    
+    <ion-col align-self-center size-md="6" size-lg="6" size-xs="12">
+      <!-- Logo -->
+      <div class="ion-margin-top ion-text-center">
+      <img src="assets/marketing/050-tabs.png" style="height: 150px;width: 150px;">
+      <ion-text color="light" class="fw700">
+
+      </ion-text>
+     </div>
+
+
+    <!-- Login form -->
+    <form [formGroup]="onLoginForm" >
+
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email" [(ngModel)]="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <p ion-text class="text08"
+        *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">
+        <ion-text lass="error-message">
+          * Email requis.
+        </ion-text>
+      </p>
+
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="lock-closed" item-start></ion-icon>
+          Mot de passe
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="password" formControlName="password"></ion-input>
+      </ion-item>
+      <p ion-text color="warning" class="text08"
+        *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">
+        <ion-text lass="error-message">
+          * Mot de passe requis.
+        </ion-text>
+      </p>
+    </form>
+
+    <p class="ion-text-right paz" tappable (click)="forgotPass()">
+      <ion-text >
+        <strong>Mot de passe oublié ?</strong>
+      </ion-text>
+    </p>
+
+
+      <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="goLogin()"
+        [disabled]="!onLoginForm.valid" tappable>
+        Connexion
+      </ion-button>
+
+
+
+    <!-- Other links -->
+    <div class="ion-margin-top ion-text-center">
+      <span >
+        <ion-text >
+         vous n'avez pas de compte ? 
+        </ion-text>
+      </span>
+    </div>
+
+
+    <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="goToRegister()" tappable>
+    Inscription gratuite
+  </ion-button>
+
+
+
+  </ion-col>
+
+
+  <ion-col size-md="3" size-lg="3" size-xs="12">
+  </ion-col>
+
+  </ion-row>
+   </ion-grid>
+
+
+
+</ion-content>

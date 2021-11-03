@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="color: var(--ion-color-primary);">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeLg="3" sizeMd="3" sizeXs="12" style="border: 2px;border-width: 2px;">
+      </ion-col>
+      <ion-col sizeLg="6" sizeMd="6" sizeXs="12" style="border: 2px;border-width: 2px;">
+    
+
+          <ion-list  *ngFor="let item of datareponse" padding >
+
+            <ion-item class="ion-padding" class="container"  [color]="item.isChecked ? 'secondary':'light'" 
+            [style.background-color]="item.isChecked ? 'secondary' : 'light'">
+              <ion-label>{{item.question}}</ion-label>
+            </ion-item>
+
+        </ion-list>
+        
+      </ion-col>
+      <ion-col sizeLg="6" sizeMd="6" sizeXs="12" style="border: 2px;border-width: 2px;">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
